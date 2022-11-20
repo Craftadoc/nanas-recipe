@@ -1,0 +1,150 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{calc}
+\usepackage[percent]{overpic}
+\usepackage[medium]{HindMadurai}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+% \renewcommand\familydefault{\sfdefault}
+
+\newlength{\picmargin}
+\setlength{\picmargin}{15pt}
+
+\newlength{\picwidth}
+\setlength{\picwidth}{\paperwidth - 2\picmargin}
+
+\geometry{
+    top=\picmargin,
+    bottom=\picmargin,
+    left=\picmargin,
+    textwidth=\picwidth
+}
+
+\newcommand{\recipeTitle}[1]{
+  \vspace{0.2cm}
+  \parbox{\picwidth}{
+    \centering
+    \LARGE{\textbf{#1}}
+  }
+}
+
+\newcommand{\recipeDescription}[1]{
+  \vspace{0.2cm}
+  \parbox{\picwidth}{
+    \centering
+    \large
+    {#1}
+  }
+}
+
+\newcommand{\ingredient}[1]{
+  \vspace{0.1cm}
+  \hspace{0cm}
+  {#1}\\
+}
+
+\newcommand{\prep}[1]{
+  \textbf{Prep:} {#1}\\
+}
+
+\newcommand{\cooking}[1]{
+  \textbf{Cook:} {#1}\\
+}
+
+%<{"type": "group", "description": "Color settings (optional)"}
+\definecolor{Pagebackground}{HTML}
+{eeeeee} %<{"type": "color", "description": "Page background color", "initialColor": "#EEEEEE"}>
+\pagecolor{Pagebackground}
+
+\definecolor{captionColor}{HTML}
+{000000} %<{"type": "color", "description": "Image caption color", "initialColor": "#000000"}>
+
+\definecolor{textColor}{HTML}
+{000000} %<{"type": "color", "description": "Text color", "initialColor": "#000000"}>
+%>
+
+\begin{document}
+\pagestyle{empty}
+%<{"type": "group", "description": "Recipe image"}
+\hspace{-\picmargin}
+\begin{overpic}[
+    width=\picwidth,
+    height=0.70\picwidth,
+    % grid,
+    % tics=10
+  ]
+  {raspberry_pie_cropped} %<{"type": "crop", "description": "", "aspect": 1.43}>
+  \put (1,2) {
+    \parbox[b]{0.3\picwidth}
+    {
+      \textcolor{captionColor}{
+        \textbf
+        {Caption. Say something sweet about this photo or recipe.} %<{"type": "text", "description": "Recipe image caption"}>
+      }
+    }
+  }
+\end{overpic}
+%>
+
+\color{textColor}
+
+\vspace{0.5cm}
+\hspace{-\picmargin}
+\recipeTitle{NANA'S RASPBERRY PIE} %<{"type": "text", "description": "Recipe title"}>
+
+\vspace{-0.5cm}
+\hspace{-\picmargin}
+\parbox{\picwidth}{
+  \centering
+  \begin{tikzpicture}
+    \draw[very thick] (-7,0) -- (7,0);
+  \end{tikzpicture}
+}
+% \line(1,0){12cm}
+
+\vspace{0.3cm}
+\hspace{-\picmargin}
+\recipeDescription{There was nothing like Nana's Raspberry Pie when we were younger. It's sweet, a bit tart, and tastes like summers on the porch in North Carolina.} %<{"type": "textblock", "description": "Recipe description"}>
+
+\begin{multicols}{3}
+  \normalsize
+  \raggedright
+  \textbf{Ingredients}\\
+  \vspace{0.2cm}
+  %<{"type": "list", "description": "Ingredients"}
+  %<{"type": "text", "description": "Your ingredient"}
+  \ingredient{2 cups all-purpose flour}
+  %>
+  \ingredient{1.5 teaspoons unsweetened cocoa}
+  \ingredient{1 cup butter (do not user margarine)}
+  \ingredient{2 large eggs}
+  \ingredient{0.75 cups sugar}
+  \ingredient{0.25 tablespoons pure vanilla extract}
+  %>
+  %<{"type": "group", "description": "Preparation time"}
+  \vspace{0.5cm}
+  \prep{45 min} %<{"type": "text", "description": "Preparation time"}>
+  \cooking{1.5 hours} %<{"type": "text", "description": "Cooking time"}>
+  %>
+  \columnbreak
+  \begin{enumerate}[leftmargin=0.3cm]
+    %<{"type": "list", "description": "Preparation and cooking steps"}
+    \item{Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat} %<{"type": "textblock", "description": "Your recipe step"}>
+    \item Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+    \item Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.
+    \item Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.
+    \item Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euismod vel, velit. Pellentesque egestas sem. Suspendisse commodo ullamcorper magna.
+    \item Nulla sed leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          Fusce lacinia arcu et nulla. Nulla vitae mauris non felis mollis faucibus.
+    \item Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+    \item Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+    \item Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
+    %>
+  \end{enumerate}
+\end{multicols}
+\end{document}
