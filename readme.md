@@ -2,6 +2,8 @@
 
 A [Craftadoc](https://craftadoc.com) template. (Using LaTeX.)
 
+Easily create a beautiful recipe by using Nana's Recipe template. It features a large recipe image with an optional caption. The main content is split into 3 columns, one for the ingredients and cooking times. With two columns reserved for the preparation and cooking steps.
+
 ### How do I use this?
 
 #### Option 1:
