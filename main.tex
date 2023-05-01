@@ -56,17 +56,18 @@
   \textbf{Cook:} {#1}\\
 }
 
-%<{"type": "group", "description": "Color settings (optional)"}
+\newcommand{\hide}[1]
+{}
+
 \definecolor{Pagebackground}{HTML}
-{eeeeee} %<{"type": "color", "description": "Page background color", "initialColor": "#EEEEEE"}>
+{eeeeee} %<{type: "reference", id: "backgroundColor"}>
 \pagecolor{Pagebackground}
 
 \definecolor{captionColor}{HTML}
-{000000} %<{"type": "color", "description": "Image caption color", "initialColor": "#000000"}>
+{000000} %<{type: "reference", id: "imageCaptionColor"}>
 
 \definecolor{textColor}{HTML}
-{000000} %<{"type": "color", "description": "Text color", "initialColor": "#000000"}>
-%>
+{000000} %<{type: "reference", id: "textColor"}>
 
 \begin{document}
 \pagestyle{empty}
@@ -109,7 +110,7 @@
 
 \vspace{0.3cm}
 \hspace{-\picmargin}
-\recipeDescription{There was nothing like Nana's Raspberry Pie when we were younger. It's sweet, a bit tart, and tastes like summers on the porch in North Carolina.} %<{"type": "textblock", "description": "Recipe description"}>
+\recipeDescription{There was nothing like Nana's Raspberry Pie when we were younger. It's sweet, a bit tart, and tastes like summers on the porch in North Carolina.} %<{type: "textblock", description: "Recipe description", injectBrackets: true}>
 
 \begin{multicols}{3}
   \normalsize
@@ -134,7 +135,7 @@
   \columnbreak
   \begin{enumerate}[leftmargin=0.3cm]
     %<{"type": "list", "description": "Preparation and cooking steps"}
-    \item{Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat} %<{"type": "textblock", "description": "Your recipe step"}>
+    \item{Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat} %<{type: "textblock", description: "Your recipe step", injectBrackets: true}>
     \item Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
     \item Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.
     \item Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.
@@ -147,4 +148,13 @@
     %>
   \end{enumerate}
 \end{multicols}
+
+%<{type: "group", description: "Color settings (optional)"}
+\hide{
+  %<{type: "color", description: "Page background color", initialColor: "#EEEEEE", id: "backgroundColor"}>
+  %<{type: "color", description: "Image caption color", initialColor: "#000000", id: "imageCaptionColor"}>
+  %<{type: "color", description: "Text color", initialColor: "#000000", id: "textColor"}>
+}
+%>
+
 \end{document}
