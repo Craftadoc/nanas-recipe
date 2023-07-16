@@ -43,9 +43,7 @@
 }
 
 \newcommand{\ingredient}[1]{
-  \vspace{0.1cm}
-  \hspace{0cm}
-  {#1}\\
+  \item[]{#1}\\
 }
 
 \newcommand{\prep}[1]{
@@ -58,6 +56,23 @@
 
 \newcommand{\hide}[1]
 {}
+
+\newenvironment{steps}
+{%
+  \begin{enumerate}[leftmargin=0.3cm]
+}
+{%
+  \end{enumerate}
+}
+
+\newenvironment{ingredients}
+{%
+  \vspace{9pt}
+  \begin{itemize}[nosep, itemsep=2pt, leftmargin=3pt]
+}
+{%
+  \end{itemize}
+}
 
 \definecolor{Pagebackground}{HTML}
 {eeeeee} %<{type: "reference", id: "backgroundColor"}>
@@ -135,7 +150,7 @@
   \normalsize
   \raggedright
   \textbf{Ingredients}\\
-  \vspace{0.2cm}
+  \begin{ingredients}
   %<{"type": "list", "description": "Ingredients"}
     %<{"type": "text", "description": "Your ingredient", inputValue: "2 cups all-purpose flour"}
       \ingredient{2 cups all-purpose flour}
@@ -156,13 +171,15 @@
       \ingredient{0.25 tablespoons pure vanilla extract}
     %>
   %>
+  \end{ingredients}
   %<{"type": "group", "description": "Preparation time"}
     \vspace{0.5cm}
     \prep{45 min} %<{"type": "text", "description": "Preparation time", inputValue: "45 min"}>
     \cooking{1.5 hours} %<{"type": "text", "description": "Cooking time", inputValue: "1.5 hours"}>
+    \vspace{0pt}
   %>
   \columnbreak
-  \begin{enumerate}[leftmargin=0.3cm]
+  \begin{steps}
     %<{"type": "list", "description": "Preparation and cooking steps"}
     \item{Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat} %<{type: "textblock", description: "Your recipe step", injectBrackets: true, inputValue: "Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat"}>
     \item{Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.} %<{type: "textblock", description: "Your recipe step", injectBrackets: true, inputValue: "Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus."}>
@@ -175,7 +192,7 @@
     \item{Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.} %<{type: "textblock", description: "Your recipe step", injectBrackets: true, inputValue: "Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis."}>
     \item{Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.} %<{type: "textblock", description: "Your recipe step", injectBrackets: true, inputValue: "Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat."}>
     %>
-  \end{enumerate}
+  \end{steps}
 \end{multicols}
 
 %<{type: "group", description: "Color settings (optional)"}
